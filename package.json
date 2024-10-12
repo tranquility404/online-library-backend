@@ -1,10 +1,9 @@
 {
   "scripts": {
-    "dev": "cross-env NODE_ENV=local npx nodemon app.js -- .env.local",
-    "dev-pm2": "cross-env NODE_ENV=local pm2 start app.js --name my-app -- .env.local",
-    "start": "cross-env NODE_ENV=production pm2 start app.js --name my-app -- .env.production",
-    "kill": "pm2 delete my-app",
-    "logs": "pm2 logs my-app"
+    "dev": "cross-env NODE_ENV=local npx nodemon app.js",
+    "dev-pm2": "cross-env NODE_ENV=local pm2 start app.js --name my-app && pm2 logs my-app",
+    "start": "cross-env NODE_ENV=production pm2 start app.js --name my-app && pm2 logs my-app",
+    "kill": "pm2 delete my-app"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.13.0",
@@ -17,6 +16,7 @@
     "express": "^4.21.0",
     "googleapis": "^144.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.7.0"
+    "mongoose": "^8.7.0",
+    "pm2": "^5.4.2"
   }
 }

@@ -11,8 +11,10 @@ const listFilesAndFolders = require("./controllers/cloudStorage");
 
 
 dotenv.config();
-const envPath = process.argv[2] || '.env';
-dotenv.config({ path: path.resolve(__dirname, envPath) });
+if (process.env.NODE_ENV == "local")
+    dotenv.config({ path: path.resolve(__dirname, ".env.local") });
+else if (process.env.NODE_ENV == "production")
+    dotenv.config({path: path.resolve(__dirname, ".env.production")});
 
 const db = require("./config/db");
 const app = express();
