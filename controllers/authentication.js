@@ -24,7 +24,7 @@ module.exports.register = async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: true, // Ensure this is set to true in production (over HTTPS)
-                sameSite: 'Strict',
+                sameSite: 'Lax',
               });
             res.status(200).send("User Created");
         });
@@ -46,7 +46,7 @@ module.exports.login = async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: true, // Ensure this is set to true in production (over HTTPS)
-                sameSite: 'Strict',
+                sameSite: 'Lax',
               });
             res.status(200).send("Login Successfull");
         } else {
