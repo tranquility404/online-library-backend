@@ -12,6 +12,9 @@
 <body>
     <div class="p-2 pt-3">
         <h3 class="text-center">Admin Panel</h3>
+        <div class="px-5">
+            <a href="/user/logout" class="btn btn-primary">Logout</a>
+        </div>
         <ul class="users-container d-flex flex-wrap gap-2 mt-5">
             <% users.forEach(function(user) { %>
                 <li class="card">

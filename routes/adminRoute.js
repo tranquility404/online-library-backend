@@ -14,7 +14,7 @@ router.get("/register", isAdmin, (req, res) => {
     res.render("register");
 });
 
-router.get("/login", isAdmin, (req, res) => {
+router.get("/login", (req, res) => {
     res.render("login");
 });
 
