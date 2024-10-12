@@ -1,0 +1,182 @@
+[
+    {
+        "id": 11,
+        "genre": "FICTION",
+        "title": "As Good As Dead",
+        "author": "Holly Jackson"
+    },
+    {
+        "id": 12,
+        "genre": "FICTION",
+        "title": "Good Girl Bad Blood",
+        "author": "Holly Jackson"
+    },
+    {
+        "id": 13,
+        "genre": "FICTION",
+        "title": "The Selection Vol. 1",
+        "author": "Kiera Cass"
+    },
+    {
+        "id": 14,
+        "genre": "FICTION",
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "author": "Taylor Jenkins Reid"
+    },
+    {
+        "id": 15,
+        "genre": "FICTION",
+        "title": "The Song of Achilles",
+        "author": "Madeline M Miller"
+    },
+    {
+        "id": 16,
+        "genre": "FICTION",
+        "title": "Things We Hide from the Light",
+        "author": "Lucy Score"
+    },
+    {
+        "id": 17,
+        "genre": "FICTION",
+        "title": "Twisted",
+        "author": "McIntire Emily"
+    },
+    {
+        "id": 18,
+        "genre": "FICTION",
+        "title": "Twisted Love",
+        "author": "Twisted 1"
+    },
+    {
+        "id": 19,
+        "genre": "FICTION",
+        "title": "Unravel Me",
+        "author": "Tahereh Mafi"
+    },
+    {
+        "id": 20,
+        "genre": "FICTION",
+        "title": "Well Always Have Summer",
+        "author": "Summer 3"
+    },
+    {
+        "id": 1,
+        "genre": "CRIME & THRILLER",
+        "title": "And Then There Were None",
+        "author": "Agatha Christie"
+    },
+    {
+        "id": 2,
+        "genre": "CRIME & THRILLER",
+        "title": "One of Us Is Lying",
+        "author": "One of Us Is Lying 1"
+    },
+    {
+        "id": 3,
+        "genre": "CRIME & THRILLER",
+        "title": "One of Us Is Next",
+        "author": "One of Us Is Lying 2"
+    },
+    {
+        "id": 4,
+        "genre": "CRIME & THRILLER",
+        "title": "Paint It All Red",
+        "author": "S.T. Abby"
+    },
+    {
+        "id": 5,
+        "genre": "CRIME & THRILLER",
+        "title": "The Hawthorne Legacy",
+        "author": "Jennifer Lynn Barnes"
+    },
+    {
+        "id": 6,
+        "genre": "FANTASY",
+        "title": "A Rainha Vermelha",
+        "author": "Aveyard Victoria"
+    },
+    {
+        "id": 7,
+        "genre": "FANTASY",
+        "title": "Harry Potter",
+        "author": "J. K. Rowling"
+    },
+    {
+        "id": 8,
+        "genre": "FANTASY",
+        "title": "Nick and Charlie",
+        "author": "Alice Oseman [Oseman, Alice]"
+    },
+    {
+        "id": 9,
+        "genre": "FANTASY",
+        "title": "The Last Wish",
+        "author": "Andrzej Sapkowski"
+    },
+    {
+        "id": 10,
+        "genre": "FANTASY",
+        "title": "The Return Of The King",
+        "author": "J.R.R Tolkien"
+    },
+    {
+        "id": 21,
+        "genre": "PSHYCOLOGY",
+        "title": "Dark Psychology The Practical Uses and Best Defenses of Psychological Warfare in Everyday Life - How to Detect and Defend...",
+        "author": "James W. Williams"
+    },
+    {
+        "id": 22,
+        "genre": "PSHYCOLOGY",
+        "title": "Emotional Intelligence",
+        "author": "Daniel Goleman"
+    },
+    {
+        "id": 23,
+        "genre": "PSHYCOLOGY",
+        "title": "Games People Play The Psychology of Human Relationships",
+        "author": "Eric Berne"
+    },
+    {
+        "id": 24,
+        "genre": "PSHYCOLOGY",
+        "title": "The Social Skills Guidebook Manage Shyness, Improve Your Conversations, and Make Friends, Without Giving Up Who You Are",
+        "author": "Chris MacLeod MSW"
+    },
+    {
+        "id": 25,
+        "genre": "PSHYCOLOGY",
+        "title": "Think and Grow Rich",
+        "author": "Napoleon Hill"
+    },
+    {
+        "id": 26,
+        "genre": "RELIGION & SPIRITUALITY",
+        "title": "A Dictionary of Symbols",
+        "author": "J. C. Cirlot (Author"
+    },
+    {
+        "id": 27,
+        "genre": "RELIGION & SPIRITUALITY",
+        "title": "Bhagavad-Gītā As It Is",
+        "author": "A. C. Bhaktivedanta Swami Prabhupāda"
+    },
+    {
+        "id": 28,
+        "genre": "RELIGION & SPIRITUALITY",
+        "title": "Encyclopedia of Spirits",
+        "author": "Judika Illes"
+    },
+    {
+        "id": 29,
+        "genre": "RELIGION & SPIRITUALITY",
+        "title": "Protection Spells",
+        "author": "Arin Murphy-Hiscock"
+    },
+    {
+        "id": 30,
+        "genre": "RELIGION & SPIRITUALITY",
+        "title": "The Four Agreements",
+        "author": "Don Miguel Ruiz, Janet Mills"
+    }
+]

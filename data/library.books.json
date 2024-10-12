@@ -1,0 +1,272 @@
+[
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817a8"
+    },
+    "genre": "FICTION",
+    "title": "As Good As Dead",
+    "author": "Holly Jackson",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817a8/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817a9"
+    },
+    "genre": "FICTION",
+    "title": "Good Girl Bad Blood",
+    "author": "Holly Jackson",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817a9/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817aa"
+    },
+    "genre": "FICTION",
+    "title": "The Selection Vol. 1",
+    "author": "Kiera Cass",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817aa/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817ab"
+    },
+    "genre": "FICTION",
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817ab/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817ac"
+    },
+    "genre": "FICTION",
+    "title": "The Song of Achilles",
+    "author": "Madeline M Miller",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817ac/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817ad"
+    },
+    "genre": "FICTION",
+    "title": "Things We Hide from the Light",
+    "author": "Lucy Score",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817ad/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817ae"
+    },
+    "genre": "FICTION",
+    "title": "Twisted",
+    "author": "McIntire Emily",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817ae/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817af"
+    },
+    "genre": "FICTION",
+    "title": "Twisted Love",
+    "author": "Ana Huang",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817af/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b0"
+    },
+    "genre": "FICTION",
+    "title": "Unravel Me",
+    "author": "Tahereh Mafi",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817b0/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b1"
+    },
+    "genre": "FICTION",
+    "title": "Well Always Have Summer",
+    "author": "Jenny Han",
+    "thumbnail": "ol-bucket-1/FICTION/6707b1df5eb708f4b87817b1/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b2"
+    },
+    "genre": "CRIME & THRILLER",
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "thumbnail": "ol-bucket-1/CRIME & THRILLER/6707b1df5eb708f4b87817b2/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b3"
+    },
+    "genre": "CRIME & THRILLER",
+    "title": "One of Us Is Lying (One of Us Is Lying 1)",
+    "author": "Karen M. McManus",
+    "thumbnail": "ol-bucket-1/CRIME & THRILLER/6707b1df5eb708f4b87817b3/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b4"
+    },
+    "genre": "CRIME & THRILLER",
+    "title": "One of Us Is Next (One of Us Is Lying 2)",
+    "author": "Karen M. McManus",
+    "thumbnail": "ol-bucket-1/CRIME & THRILLER/6707b1df5eb708f4b87817b4/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b5"
+    },
+    "genre": "CRIME & THRILLER",
+    "title": "Paint It All Red",
+    "author": "S.T. Abby",
+    "thumbnail": "ol-bucket-1/CRIME & THRILLER/6707b1df5eb708f4b87817b5/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b6"
+    },
+    "genre": "CRIME & THRILLER",
+    "title": "The Hawthorne Legacy",
+    "author": "Jennifer Lynn Barnes",
+    "thumbnail": "ol-bucket-1/CRIME & THRILLER/6707b1df5eb708f4b87817b6/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b7"
+    },
+    "genre": "FANTASY",
+    "title": "A Rainha Vermelha",
+    "author": "Aveyard Victoria",
+    "thumbnail": "ol-bucket-1/FANTASY/6707b1df5eb708f4b87817b7/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b8"
+    },
+    "genre": "FANTASY",
+    "title": "Harry Potter",
+    "author": "J. K. Rowling",
+    "thumbnail": "ol-bucket-1/FANTASY/6707b1df5eb708f4b87817b8/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817b9"
+    },
+    "genre": "FANTASY",
+    "title": "Nick and Charlie",
+    "author": "Alice Oseman [Oseman, Alice]",
+    "thumbnail": "ol-bucket-1/FANTASY/6707b1df5eb708f4b87817b9/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817ba"
+    },
+    "genre": "FANTASY",
+    "title": "The Last Wish",
+    "author": "Andrzej Sapkowski",
+    "thumbnail": "ol-bucket-1/FANTASY/6707b1df5eb708f4b87817ba/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817bb"
+    },
+    "genre": "FANTASY",
+    "title": "The Return Of The King",
+    "author": "J.R.R Tolkien",
+    "thumbnail": "ol-bucket-1/FANTASY/6707b1df5eb708f4b87817bb/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817bc"
+    },
+    "genre": "PSHYCOLOGY",
+    "title": "Dark Psychology The Practical Uses and Best Defenses of Psychological Warfare in Everyday Life - How to Detect and Defend...",
+    "author": "James W. Williams",
+    "thumbnail": "ol-bucket-1/PSHYCOLOGY/6707b1df5eb708f4b87817bc/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817bd"
+    },
+    "genre": "PSHYCOLOGY",
+    "title": "Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "thumbnail": "ol-bucket-1/PSHYCOLOGY/6707b1df5eb708f4b87817bd/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817be"
+    },
+    "genre": "PSHYCOLOGY",
+    "title": "Games People Play The Psychology of Human Relationships",
+    "author": "Eric Berne",
+    "thumbnail": "ol-bucket-1/PSHYCOLOGY/6707b1df5eb708f4b87817be/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817bf"
+    },
+    "genre": "PSHYCOLOGY",
+    "title": "The Social Skills Guidebook Manage Shyness, Improve Your Conversations, and Make Friends, Without Giving Up Who You Are",
+    "author": "Chris MacLeod MSW",
+    "thumbnail": "ol-bucket-1/PSHYCOLOGY/6707b1df5eb708f4b87817bf/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c0"
+    },
+    "genre": "PSHYCOLOGY",
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "thumbnail": "ol-bucket-1/PSHYCOLOGY/6707b1df5eb708f4b87817c0/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c1"
+    },
+    "genre": "RELIGION & SPIRITUALITY",
+    "title": "A Dictionary of Symbols",
+    "author": "J. C. Cirlot",
+    "thumbnail": "ol-bucket-1/RELIGION & SPIRITUALITY/6707b1df5eb708f4b87817c1/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c2"
+    },
+    "genre": "RELIGION & SPIRITUALITY",
+    "title": "Bhagavad-Gītā As It Is",
+    "author": "A. C. Bhaktivedanta Swami Prabhupāda",
+    "thumbnail": "ol-bucket-1/RELIGION & SPIRITUALITY/6707b1df5eb708f4b87817c2/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c3"
+    },
+    "genre": "RELIGION & SPIRITUALITY",
+    "title": "Encyclopedia of Spirits",
+    "author": "Judika Illes",
+    "thumbnail": "ol-bucket-1/RELIGION & SPIRITUALITY/6707b1df5eb708f4b87817c3/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c4"
+    },
+    "genre": "RELIGION & SPIRITUALITY",
+    "title": "Protection Spells",
+    "author": "Arin Murphy-Hiscock",
+    "thumbnail": "ol-bucket-1/RELIGION & SPIRITUALITY/6707b1df5eb708f4b87817c4/thumbnail.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6707b1df5eb708f4b87817c5"
+    },
+    "genre": "RELIGION & SPIRITUALITY",
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz, Janet Mills",
+    "thumbnail": "ol-bucket-1/RELIGION & SPIRITUALITY/6707b1df5eb708f4b87817c5/thumbnail.jpg"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "npx nodemon app.js",
+    "start:development": "NODE_ENV=development npx nodemon app.js -r dotenv/config dotenv_config_path=.env.development",
+    "start:production": "NODE_ENV=production npx nodemon app.js -r dotenv/config dotenv_config_path=.env.production",
+    "start:test": "NODE_ENV=test npx nodemon app.js -r dotenv/config dotenv_config_path=.env.test"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.13.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "googleapis": "^144.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "online-library-437112",
+  "private_key_id": "870a919fb5dda82e76dab24e588a915aff170913",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCutpCcx0hweiF+\nggmzbF7bYALKO5aPdX+4vEpWLsznaIGRJFbG+9NW4pRjEbMdW+KfKwtW6lDBB9ve\nKFq1tEOKXPWxNhJwhGMcy+oUGw6s5GkbCtO1i/Rq+QVEJMLkzaltTqbDnZuiN/UR\nUqaS18as2kzV/0x5o2BjYbEQ67EsZU2PhgvivXOo/fPcFzzPevdEDgNYx4YGYEPx\n+MbiHdmLdmcoOR6FTM6MzQna80DkFhHlD3tTA7KNWcK3+sAytnGThjAyCBZmydq+\ngxx2vpuQSTyTyZnkWecGifpbjHW3NuVX6ilBPK4zU3enyAlMOvvbH3p+5LpWEwju\nnceslPJzAgMBAAECggEASXoKM4U0F+mlMHkr70OCWSx1v+tzlH3L6zt03+3qyt+O\nriXkQOcjqIS99zQ4af58vofxyunccHIHq9S44XYgeY5C3fZpptxmenPfy/jdISUm\ndvMEunNTpbF434G+XU+JE6liRR6Bl6WE8XYbC+KncYaVjeJCnV1yahlpyD33Uz3M\n99KJ/8jDQfmnvfaGpqD3OdLGPUQSJSsHEw7H38O4D+MUaA5Na0hucNj5h0OKy1Lq\nKRK64rIPJ9sZdnFpuoawx104T1UtT+FSzDcVIZzymJ1GeEesFRx8n60YkJaNRdfQ\nsYTossTbCETJ3Veqa8OC5qO18Q0KqQKjBa7W8CfakQKBgQDlel0Zp96kks1WGcJM\nN2grEfPg73sRyU5wfxzIDQmonSPfjUaViW/C5AkS1wvBq5tvRg+LopND70+ytzLR\niUIhFSKAPvaohRMQIJgB+v+qllb5rnW22DyHdkZflt3/9HtZxtRWVs4iAeFGp/hl\n5jO/qn/szcXclHNKH+9pbby/rQKBgQDC59tfjGnJgcZ+EkzfO6juwkXTRqHkVcPl\naUG6q7tXoQjMMm44kiWpscyLLXfVkuSBoTO6NqAn73AzizQU94IRPatp1l9ZzzmG\ncjWeeujBLwBehdzdfFjzMBjgeDFGjfv//ZfWX7oLJtc1RUWxX4u3Eh2DlEyyV9Hm\nq0toC2Y+nwKBgE8Mx+V+noOyzmlKllQLAidUF970oECQSCUYpKGFXD5pY2IvGJGK\ntqU8SKPk0Hf21aSPTeucJX7RgXLfCPKFhfI/hZMIHZAPx3FWyQZloIzzHSMFpidG\ndhNz+uoS3oa9gYB7rcnQPVIZs7DTTA5OLqVn5ol8mRxTRyPRvHdlBhBBAoGAJYRJ\nxteZWU9grM3K/EFYoDTHCgcTjIcxwQwEufDqi9CUh/HBI6SGGWb/D18+LN8smwMz\nmMmBBI7jUxidete1sqnjP+kiy3/G++kqBwpzmRP6BzfPLtcLrCv67eJU4dbcxgbD\nXmFox1K/pCJkauMQWrni8nvuU3nyDmu0hR+Em9MCgYB7aLQVUP5V9kilSVwWlw5s\nWmysm6AHacDZWTDk9u1NRFeF9cVU9JE2+TmfvWlRdLc0JUCc4S3N6smgm8+72rtz\n5ZGw1fVILe872fzfC0CKtTiZU4BZxPVEqlk7bqte/1a8OUGIGZtZwEebvqT5cvHg\nA5NhwuUsHWYPHx++AZ1hvw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tranquility@online-library-437112.iam.gserviceaccount.com",
+  "client_id": "109046628830619623536",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tranquility%40online-library-437112.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
