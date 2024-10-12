@@ -2,19 +2,25 @@ const express = require("express");
 const cors = require('cors');
 const path = require("path");
 const storage = require("./config/gcStorage");
-
-require("dotenv").config();
+const dotenv = require("dotenv");
 const publicRoute = require("./routes/publicRoute");
 const adminRoute = require("./routes/adminRoute");
 const usersRoute = require("./routes/usersRoute");
-
-const db = require("./config/db");
 const cookieParser = require("cookie-parser");
 const listFilesAndFolders = require("./controllers/cloudStorage");
+
+
+dotenv.config();
+const envPath = process.argv[2] || '.env';
+dotenv.config({ path: path.resolve(__dirname, envPath) });
+
+const db = require("./config/db");
 const app = express();
 
+console.log(process.env.MONGODB_URI);
+
 const corsOptions = {
-    origin: 'http://localhost:5173', // specify your front-end origin
+    origin: process.env.ORIGINS, // specify your front-end origin
     credentials: true // allow credentials (cookies, headers, etc.)
   };
   
@@ -22,7 +28,7 @@ app.use(cors(corsOptions));
 async function setCorsConfiguration() {
     const corsConfiguration = [
       {
-        origin: ['http://localhost:5173'],  // Allow your frontend origin
+        origin: process.env.ORIGINS,  // Allow your frontend origin
         method: ['GET', 'HEAD', 'OPTIONS'],  // Allowed methods
         responseHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
         maxAgeSeconds: 3600,                  // How long to cache the preflight response
@@ -31,7 +37,7 @@ async function setCorsConfiguration() {
   
     try {
         const a = await storage.bucket(process.env.BOOK_BUCKET).setMetadata({cors: corsConfiguration});
-        console.log(a);
+        // console.log(a);
         
       console.log('CORS configuration updated successfully.');
     } catch (error) {

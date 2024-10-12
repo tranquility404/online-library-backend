@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 const mongoURI = process.env.MONGODB_URI;
-const dbName = process.env.DB;
+console.log(mongoURI);
 
-mongoose.connect(mongoURI + dbName)
+
+mongoose.connect(mongoURI)
     .then(() => {
         console.log("db connected");
     })
