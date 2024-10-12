@@ -21,8 +21,12 @@ const app = express();
 
 console.log(process.env.MONGODB_URI);
 
+const allowedOrigins = process.env.ORIGINS.split(',').map(origin => origin.trim());
+console.log(allowedOrigins);
+
+
 const corsOptions = {
-    origin: process.env.ORIGINS, // specify your front-end origin
+    origin: allowedOrigins, // specify your front-end origin
     credentials: true // allow credentials (cookies, headers, etc.)
   };
   
@@ -30,7 +34,7 @@ app.use(cors(corsOptions));
 async function setCorsConfiguration() {
     const corsConfiguration = [
       {
-        origin: process.env.ORIGINS,  // Allow your frontend origin
+        origin: allowedOrigins,  // Allow your frontend origin
         method: ['GET', 'HEAD', 'OPTIONS'],  // Allowed methods
         responseHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
         maxAgeSeconds: 3600,                  // How long to cache the preflight response
