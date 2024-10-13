@@ -25,6 +25,7 @@ module.exports.register = async (req, res) => {
                 httpOnly: true,
                 secure: true, // Ensure this is set to true in production (over HTTPS)
                 sameSite: 'None',
+                maxAge: 1000 * 60 * 60 * 24 * 31    // 31 days
               });
             res.status(200).send("User Created");
         });
@@ -47,6 +48,7 @@ module.exports.login = async (req, res) => {
                 httpOnly: true,
                 secure: true, // Ensure this is set to true in production (over HTTPS)
                 sameSite: 'None',
+                maxAge: 1000 * 60 * 60 * 24 * 31    // 31 days
               });
             res.status(200).send("Login Successfull");
         } else {
