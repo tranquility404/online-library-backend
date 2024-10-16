@@ -1,9 +1,8 @@
-const userModel = require("../models/user");
-const bcrypt = require("bcrypt");
-var jwt = require("jsonwebtoken");
-var user = require("../models/user");
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import userModel from "../models/user.js";
 
-module.exports.register = async (req, res) => {
+export async function register(req, res) {
     let { name, email, password } = req.body;
 
     const entry = await userModel.findOne({ "email": email });
@@ -33,7 +32,7 @@ module.exports.register = async (req, res) => {
 }
 
 
-module.exports.login = async (req, res) => {
+export async function login(req, res) {
     const entry = await userModel.findOne({ email: req.body.email })
 
     if (!entry) {

@@ -1,7 +1,7 @@
-const userModel = require("../models/user");
-var jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+import userModel from '../models/user.js';
 
-module.exports.isAdmin = async (req, res, next) => {
+export default async function isAdmin(req, res, next) {
     console.log(req.cookies);
     
     if (!req.cookies) {

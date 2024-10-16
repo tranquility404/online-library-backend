@@ -1,7 +1,7 @@
-const userModel = require("../models/user");
-var jwt = require('jsonwebtoken');
+import userModel from "../models/user.js";
+import jwt from 'jsonwebtoken';
 
-module.exports.isLoggedIn = async (req, res, next) => {
+export default async function isLoggedIn(req, res, next) {
     console.log(req.cookies);
     
     if (!req.cookies) {

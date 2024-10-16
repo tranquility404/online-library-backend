@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const cloudFileSchema = mongoose.Schema({
     _id: String,
     url: String,
     expiresAt: Number
 });
-
-module.exports = mongoose.model('cloudFile', cloudFileSchema);
+const cloudFileModel = mongoose.model('cloudFile', cloudFileSchema);
+export default cloudFileModel;

@@ -1,15 +1,16 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const mongoURI = process.env.MONGODB_URI;
-console.log(mongoURI);
+export default function connectToMongo() {
+    const mongoURI = process.env.MONGODB_URI;
+    console.log(mongoURI);
 
+    mongoose.connect(mongoURI)
+        .then(() => {
+            console.log("db connected");
+        })
+        .catch(err => {
+            console.log(err);
+        });
 
-mongoose.connect(mongoURI)
-    .then(() => {
-        console.log("db connected");
-    })
-    .catch(err => {
-        console.log(err);
-    });
-
-module.exports = mongoose.connection
+    return mongoose.connection;
+} 

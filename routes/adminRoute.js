@@ -1,8 +1,9 @@
-const express = require("express");
+import express from "express";
+import userModel from "../models/user.js";
+import genreModel from "../models/genre.js";
+import isAdmin from "../middlewares/isAdmin.js";
+
 const router = express.Router();
-var userModel = require("../models/user");
-var genreModel = require("../models/genre");
-const { isAdmin } = require("../middlewares/isAdmin");
 
 router.get("/", isAdmin, async (req, res) => {
     const users = await userModel.find({});
@@ -45,4 +46,5 @@ router.post("/rename-genre/:id", isAdmin, async (req, res) => {
     // res.status(200).send("Name Updated Successfully!");
 });
 
-module.exports = router;
+const adminRouter = router;
+export default adminRouter;

@@ -1,10 +1,26 @@
-const { Storage } = require('@google-cloud/storage');
-const path = require("path");
+import { Storage } from '@google-cloud/storage';
+import fs from 'fs';
 
-const keyPath = path.join(__dirname, "../config/gc_key.json");
+export function connectToGc() {
+  const keyFilePath = process.env.GC_STORAGE_KEY;
+  console.log(keyFilePath);
 
-const storage = new Storage({
-    keyFilename: keyPath
-});
+  if (!fs.existsSync(keyFilePath)) {
+    console.log('Google Service account key NOT found');
+    return;
+  }
 
-module.exports = storage;
+  // const fileContents = fs.readFileSync(keyFilePath, 'utf-8');
+  // console.log(fileContents);
+
+  // const keyData = JSON.parse(fileContents);
+  // console.log(keyData);
+
+  const storage = new Storage({
+    keyFilename: keyFilePath
+  });
+
+  // console.log(await storage.getBuckets());
+
+  return storage;
+}

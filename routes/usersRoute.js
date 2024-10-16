@@ -1,164 +1,178 @@
-const express = require("express");
-const { isLoggedIn } = require("../middlewares/isLoggedIn");
-const router = express.Router();
-var userModel = require("../models/user");
-var bookModel = require("../models/book");
-var genreModel = require("../models/genre");
-var cloudFileModel = require("../models/cloudFile");
-const storage = require("../config/gcStorage");
+import express from "express";
+import isLoggedIn from "../middlewares/isLoggedIn.js";
+import userModel from "../models/user.js";
+import bookModel from "../models/book.js";
+import genreModel from "../models/genre.js";
+import cloudFileModel from "../models/cloudFile.js";
+import { storage } from "../app.js";
 
-router.get("/", (req, res) => {
-    res.send("Hello, I'm Users Route...")
-});
+export default function usersRouter() {
 
-router.get("/status", isLoggedIn, (req, res) => {
-    res.sendStatus(200);
-});
+    const router = express.Router();
 
-router.get("/logout", isLoggedIn, (req, res) => {
-    res.clearCookie("token");
-    res.status(200).send("Logged Out Successfully");
-});
+    router.get("/", (req, res) => {
+        res.send("Hello, I'm Users Route...")
+    });
 
-router.post("/rename/:id", isLoggedIn, async (req, res) => {
-    const id = req.params.id;
-    const {name} = req.body;
+    router.get("/status", isLoggedIn, (req, res) => {
+        res.sendStatus(200);
+    });
 
-    const user = await userModel.findOneAndUpdate({_id: id}, {name});
-    console.log("rename success");
-    
-    res.redirect("/admin");
-    // res.status(200).send("Name Updated Successfully!");
-});
+    router.get("/logout", isLoggedIn, (req, res) => {
+        res.clearCookie("token");
+        res.status(200).send("Logged Out Successfully");
+    });
 
-router.get("/genre", isLoggedIn, async (req, res) => {
-    const genres = await genreModel.find();
-    res.status(200).send(genres);
-});
+    router.post("/rename/:id", isLoggedIn, async (req, res) => {
+        const id = req.params.id;
+        const { name } = req.body;
 
-router.get("/books", isLoggedIn, async (req, res) => {
-    const {genre, author, sort, limit} = req.query;
-    
-    let filters = {};
-    if (genre)
-        filters["genre"] = genre;
-    if (author)
-        filters["author"] = author;
+        const user = await userModel.findOneAndUpdate({ _id: id }, { name });
+        console.log("rename success");
 
+        res.redirect("/admin");
+        // res.status(200).send("Name Updated Successfully!");
+    });
 
-    let query = bookModel.find(filters);
-    if (sort == "last")
-        query = query.sort({ _id: -1});
-    if (limit)
-        query = query.limit(limit);
+    router.get("/genre", isLoggedIn, async (req, res) => {
+        const genres = await genreModel.find();
+        res.status(200).send(genres);
+    });
 
-    console.log("/books request received");
-    console.log(filters);
-    console.log(sort, limit);
-    
-    
-    books = await query.exec();
-    res.send(books);
-});
+    router.get("/books", isLoggedIn, async (req, res) => {
+        const { genre, author, sort, limit } = req.query;
 
-router.get("/read-book/:id", isLoggedIn, async (req, res) => {
-    const bookId = req.params.id;
-    const book = await bookModel.findById({_id: bookId});
+        let filters = {};
+        if (genre)
+            filters["genre"] = genre;
+        if (author)
+            filters["author"] = author;
 
-    const fileName = `${book.genre}/${bookId}/book.epub`;
-    
-    const cacheFile = await cloudFileModel.findById({_id: fileName});
-    console.log(cacheFile);
+        let query = bookModel.find(filters);
+        if (sort == "last")
+            query = query.sort({ _id: -1 });
+        if (limit)
+            query = query.limit(limit);
 
-    if (cacheFile) {
-        const now = Date.now();
-        const expiry = cacheFile.expiresAt;
+        console.log("/books request received");
+        console.log(filters);
+        console.log(sort, limit);
 
-        if (expiry - now > 0) {
-            console.log("returning cached...");
-            res.status(200).send(cacheFile.url);
-            return;
+        const books = await query.exec();
+        res.send(books);
+    });
+
+    router.get("/read-book/:id", isLoggedIn, async (req, res) => {
+        const bookId = req.params.id;
+        const book = await bookModel.findById({ _id: bookId });
+
+        const fileName = `${book.genre}/${bookId}/book.epub`;
+
+        const cacheFile = await cloudFileModel.findById({ _id: fileName });
+        console.log(cacheFile);
+
+        if (cacheFile) {
+            const now = Date.now();
+            const expiry = cacheFile.expiresAt;
+
+            if (expiry - now > 0) {
+                let a = new Date(now).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                });
+                let b = new Date(expiry).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                });
+                console.log("returning cached...", a, b, cacheFile.url);
+                res.status(200).send(cacheFile.url);
+                return;
+            }
         }
-    }
 
-    const file = storage.bucket(process.env.BOOK_BUCKET).file(fileName);
-    const expiresAt = Date.now() + 30 * 60 * 60 * 1000; // 30 hrs from now
+        // const file = ;
+        const expiresAt = Date.now() + 30 * 60 * 60 * 1000; // 30 hrs from now
 
-    const options = {
-      version: 'v4',
-      action: 'read',
-      expires: expiresAt
-    };
+        const options = {
+            version: 'v4',
+            action: 'read',
+            expires: expiresAt
+        };
 
-    const [url] = await file.getSignedUrl(options);
+        console.log("storage", storage);
 
-    if (!cacheFile)
-        await cloudFileModel.create({
-            _id: fileName,
-            url,
-            expiresAt
-        });
-    else
-        await cloudFileModel.updateOne(
-            {_id: fileName},
-            {url, expiresAt},
-            { runValidators: true }
-        );
+        const [url] = await storage.bucket(process.env.BOOK_BUCKET).file(fileName).getSignedUrl(options);
 
-    console.log("creating new url...");
-    res.status(200)
-        .send(url);
-    // res.send(`https://storage.googleapis.com/${process.env.BOOK_BUCKET}/${book.genre}/${bookId}/book.epub`)
-});
+        if (!cacheFile)
+            await cloudFileModel.create({
+                _id: fileName,
+                url,
+                expiresAt
+            });
+        else
+            await cloudFileModel.updateOne(
+                { _id: fileName },
+                { url, expiresAt },
+                { runValidators: true }
+            );
 
-router.get("/quiz/:id", isLoggedIn, async (req, res) => {
-    const bookId = req.params.id;
-    const book = await bookModel.findById({_id: bookId});
+        console.log("creating new url...");
+        res.status(200)
+            .send(url);
+        // res.send(`https://storage.googleapis.com/${process.env.BOOK_BUCKET}/${book.genre}/${bookId}/book.epub`)
+    });
 
-    const fileName = `${book.genre}/${bookId}/chapter-1-quiz.json`;
-    
-    const cacheFile = await cloudFileModel.findById({_id: fileName});
-    console.log(cacheFile);
+    router.get("/quiz/:id", isLoggedIn, async (req, res) => {
+        const bookId = req.params.id;
+        const book = await bookModel.findById({ _id: bookId });
 
-    if (cacheFile) {
-        const now = Date.now();
-        const expiry = cacheFile.expiresAt;
+        const fileName = `${book.genre}/${bookId}/chapter-1-quiz.json`;
 
-        if (expiry - now > 0) {
-            console.log("returning cached...");
-            res.status(200).send(cacheFile.url);
-            return;
+        const cacheFile = await cloudFileModel.findById({ _id: fileName });
+        console.log(cacheFile);
+
+        if (cacheFile) {
+            const now = Date.now();
+            const expiry = cacheFile.expiresAt;
+
+            if (expiry - now > 0) {
+                console.log("returning cached...");
+                res.status(200).send(cacheFile.url);
+                return;
+            }
         }
-    }
 
-    const file = storage.bucket(process.env.BOOK_BUCKET).file(fileName);
-    const expiresAt = Date.now() + 30 * 60 * 60 * 1000; // 30 hrs from now
+        const file = storage.bucket(process.env.BOOK_BUCKET).file(fileName);
+        const expiresAt = Date.now() + 30 * 60 * 60 * 1000; // 30 hrs from now
 
-    const options = {
-      version: 'v4',
-      action: 'read',
-      expires: expiresAt
-    };
+        const options = {
+            version: 'v4',
+            action: 'read',
+            expires: expiresAt
+        };
 
-    const [url] = await file.getSignedUrl(options);
+        const [url] = await file.getSignedUrl(options);
 
-    if (!cacheFile)
-        await cloudFileModel.create({
-            _id: fileName,
-            url,
-            expiresAt
-        });
-    else
-        await cloudFileModel.updateOne(
-            {_id: fileName},
-            {url, expiresAt},
-            { runValidators: true }
-        );
+        if (!cacheFile)
+            await cloudFileModel.create({
+                _id: fileName,
+                url,
+                expiresAt
+            });
+        else
+            await cloudFileModel.updateOne(
+                { _id: fileName },
+                { url, expiresAt },
+                { runValidators: true }
+            );
 
-    console.log("creating new url...");
-    res.status(200)
-        .send(url);
-    // res.send(`https://storage.googleapis.com/${process.env.BOOK_BUCKET}/${book.genre}/${bookId}/book.epub`)
-});
+        console.log("creating new url...");
+        res.status(200)
+            .send(url);
+        // res.send(`https://storage.googleapis.com/${process.env.BOOK_BUCKET}/${book.genre}/${bookId}/book.epub`)
+    });
 
-module.exports = router;
+    return router;
+}

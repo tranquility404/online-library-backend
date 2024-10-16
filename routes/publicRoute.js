@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import { register, login } from "../controllers/authentication.js";
 
-const { register, login } = require("../controllers/authentication");
+const router = express.Router();
 
 router.get("/", (req, res) => {
     res.send("Hey I'm Public Route...");
@@ -11,4 +11,5 @@ router.post("/register", register);
 
 router.post("/login", login);
 
-module.exports = router;
+const publicRouter = router;
+export default publicRouter;

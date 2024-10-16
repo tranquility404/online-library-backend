@@ -1,70 +1,36 @@
-const express = require("express");
-const cors = require('cors');
-const path = require("path");
-const storage = require("./config/gcStorage");
-const dotenv = require("dotenv");
-const publicRoute = require("./routes/publicRoute");
-const adminRoute = require("./routes/adminRoute");
-const usersRoute = require("./routes/usersRoute");
-const cookieParser = require("cookie-parser");
-const listFilesAndFolders = require("./controllers/cloudStorage");
+import express from "express";
+import cors from 'cors';
+import path from "path";
+import dotenv from "dotenv";
 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config();
 if (process.env.NODE_ENV == "local")
-    dotenv.config({ path: path.resolve(__dirname, ".env.local") });
+  dotenv.config({ path: path.resolve(__dirname, ".env.local") });
 else if (process.env.NODE_ENV == "production")
-    dotenv.config({path: path.resolve(__dirname, ".env.production")});
+  dotenv.config({path: path.resolve(__dirname, ".env.production")});
 
-const db = require("./config/db");
-const app = express();
+import {connectToGc} from "./config/gcStorage.js";
+import connectToMongo from "./config/db.js";
+connectToMongo();
+export const storage = connectToGc();
 
-console.log(process.env.MONGODB_URI);
-
-const allowedOrigins = process.env.ORIGINS.split(',').map(origin => origin.trim());
-console.log(allowedOrigins);
-
+import publicRouter from "./routes/publicRoute.js";
+import adminRouter from "./routes/adminRoute.js";
+import usersRouter from "./routes/usersRoute.js";
+import cookieParser from "cookie-parser";
+import { allowedOrigins } from "./config/config.js";
+import { fileURLToPath } from "url";
 
 const corsOptions = {
-    origin: allowedOrigins, // specify your front-end origin
-    credentials: true // allow credentials (cookies, headers, etc.)
-  };
-  
+  origin: allowedOrigins(), // specify your front-end origin
+  credentials: true // allow credentials (cookies, headers, etc.)
+};
+
+const app = express();
+
 app.use(cors(corsOptions));
-async function setCorsConfiguration() {
-    const corsConfiguration = [
-      {
-        origin: allowedOrigins,  // Allow your frontend origin
-        method: ['GET', 'HEAD', 'OPTIONS'],  // Allowed methods
-        responseHeaders: ["Content-Type", "Access-Control-Allow-Origin"],
-        maxAgeSeconds: 3600,                  // How long to cache the preflight response
-      },
-    ];
-  
-    try {
-        const a = await storage.bucket(process.env.BOOK_BUCKET).setMetadata({cors: corsConfiguration});
-        // console.log(a);
-        
-      console.log('CORS configuration updated successfully.');
-    } catch (error) {
-      console.error('Error updating CORS configuration:', error);
-    }
-}
-
-setCorsConfiguration();
-
-// async function  a() {
-//     const [metadata] = await storage.bucket(process.env.BOOK_BUCKET).getMetadata();
-//     console.log(metadata);
-
-// }
-// a();
-// app.use(cors({
-//     origin: '*', // Allow all origins
-//     allowedHeaders: '*', // Allow all headers
-//     methods: '*', // Allow all methods (GET, POST, PUT, DELETE, etc.)
-//     credentials: true // Allow credentials (cookies, authorization headers, etc.)
-//   }));
   
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -78,25 +44,14 @@ app.get("/", (req, res) => {
     res.send("I work");
 });
 
-app.use("/public", publicRoute);
-app.use("/admin", adminRoute);
-app.use("/user", usersRoute);
+app.use("/public", publicRouter);
+app.use("/admin", adminRouter);
+app.use("/user", usersRouter());
 
-// listFilesAndFolders()
-
-// const genre = require("./data/categories.json");
-// const books = require("./data/library.books.json");
-// const map = new Map();
-// for (let i = 0; i < genre.length; i++)
-//     map.set(genre[i]._id, genre[i].name);
-// const json = JSON.parse(JSON.stringify(books));
-// for (let i = 0; i < books.length; i++)
-//     json[i]["genre"] = map.get(books[i].genre);
-
-// console.log(JSON.stringify(json));
+console.log(process.env.PORT);
 
 app.listen(`${process.env.PORT}`, () => {
     console.log(process.env.NODE_ENV);
     console.log(process.env.PORT);
-    
+
 });

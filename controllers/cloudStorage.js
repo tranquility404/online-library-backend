@@ -1,6 +1,7 @@
-const storage = require("../config/gcStorage");
+import storage from "../config/gcStorage.js";
+import data from "../data/library.books.json";
+
 const bucketName = process.env.BOOK_BUCKET;
-const data = require("../data/library.books.json");
 
 const json = JSON.parse(JSON.stringify(data));
 const map = new Map();
@@ -8,7 +9,7 @@ for (let i = 0; i < data.length; i++) {
     map.set(data[i]._id.$oid, i);
 }
 
-async function listFilesAndFolders(prefix = '') {
+export async function listFilesAndFolders(prefix = '') {
     try {
         const [files] = await storage.bucket(bucketName).getFiles();
 
@@ -27,5 +28,3 @@ async function listFilesAndFolders(prefix = '') {
         console.error('Error listing files:', error);
     }
 }
-
-module.exports = listFilesAndFolders;

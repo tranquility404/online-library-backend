@@ -1,3 +1,4 @@
 node_modules
 .env
 .env*
+config/gc_key.json
