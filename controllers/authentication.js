@@ -13,7 +13,7 @@ export async function register(req, res) {
 
     bcrypt.genSalt(10, function (err, salt) {
         bcrypt.hash(password, salt, async function (err, hash) {
-            await user.create({
+            await userModel.create({
                 name,
                 email,
                 password: hash
